@@ -11,4 +11,12 @@
 
     <artifactId>core</artifactId>
 
+    <dependencies>
+        <!-- Project Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>
