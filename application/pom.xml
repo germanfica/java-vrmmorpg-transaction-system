@@ -12,6 +12,12 @@
     <artifactId>application</artifactId>
 
     <dependencies>
+        <!-- Core -->
+        <dependency>
+            <groupId>com.germanfica</groupId>
+            <artifactId>core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <!-- Spring Boot Starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
