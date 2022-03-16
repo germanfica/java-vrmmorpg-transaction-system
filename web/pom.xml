@@ -18,12 +18,6 @@
             <artifactId>core</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <!-- Application -->
-        <dependency>
-            <groupId>com.germanfica</groupId>
-            <artifactId>application</artifactId>
-            <version>${project.version}</version>
-        </dependency>
     </dependencies>
 
 </project>
