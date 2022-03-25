@@ -11,4 +11,19 @@
 
     <artifactId>service</artifactId>
 
+    <dependencies>
+        <!-- Core -->
+        <dependency>
+            <groupId>com.germanfica</groupId>
+            <artifactId>core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- MySQL Connector -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector.version}</version>
+        </dependency>
+    </dependencies>
+
 </project>
