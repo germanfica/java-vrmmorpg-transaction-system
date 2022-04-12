@@ -1,12 +1,13 @@
 package com.germafica.controller;
 
+import com.germafica.dto.GameObjectDto;
+import com.germafica.dto.GameObjectOnly;
 import com.germafica.service.GameObjectService;
 import com.germafica.service.InventoryService;
 import com.germafica.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 
@@ -36,6 +37,12 @@ public class ApiController {
     void start() { }
 
     // == setters ==
+    @ResponseBody
+    @CrossOrigin
+    @PostMapping(path="/game_objects") // Map ONLY POST Requests
+    public ResponseEntity<GameObjectDto> addGameObject (@RequestBody GameObjectOnly gameObjectOnly){
+        return ResponseEntity.ok(gameObjectService.addGameObject(gameObjectOnly));
+    }
 
     // == puts ==
 
