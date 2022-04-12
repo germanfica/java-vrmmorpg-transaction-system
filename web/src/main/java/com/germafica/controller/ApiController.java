@@ -45,8 +45,12 @@ public class ApiController {
     }
 
     // == puts ==
+    //TODO: Add game object put method
 
     // == getters ==
+    //TODO: Add game object getAll method
+    //TODO: Add game object get method
 
     // == deletes ==
+    //TODO: Add game object delete method
 }
