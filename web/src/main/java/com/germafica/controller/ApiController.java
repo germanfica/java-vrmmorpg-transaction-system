@@ -35,4 +35,11 @@ public class ApiController {
     @PostConstruct // Do not use the @PostConstruct to get the data from the database
     void start() { }
 
+    // == setters ==
+
+    // == puts ==
+
+    // == getters ==
+
+    // == deletes ==
 }
