@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @RequiredArgsConstructor
-//@NoArgsConstructor // JPA requires that this constructor be defined as public or protected
+@NoArgsConstructor // JPA requires that this constructor be defined as public or protected
 @Entity(name = "GameObject")
 @Table(name = "game_object")
 public class GameObject {
@@ -28,8 +28,9 @@ public class GameObject {
     @NonNull
     private String description;
 
+    @Column(nullable = false, columnDefinition = "TINYINT")
     @NonNull
-    private boolean tradable;
+    private Boolean tradable;
 
     // == associations ==
 
