@@ -35,8 +35,4 @@ public class GameObject {
     // == associations ==
 
     // == stores relationship ==
-    //TODO: Fix stores relationship
-    @Getter(value = AccessLevel.NONE)
-    @ManyToOne(fetch = FetchType.LAZY)
-    private GameObject gameObject;
 }

@@ -42,7 +42,10 @@ public class Inventory {
 
     // == stores relationship ==
     @Getter(value = AccessLevel.NONE)
-    @OneToMany(mappedBy = "gameObject", cascade = CascadeType.ALL)
-    @LazyCollection( LazyCollectionOption.EXTRA )
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+//    @JoinTable(name="stores",
+//            joinColumns={@JoinColumn(name="gameObjectId")},
+//            inverseJoinColumns={@JoinColumn(name="inventoryId")})
+    @JoinTable(name="stores")
     private List<GameObject> gameObjects = new ArrayList<>();
 }
