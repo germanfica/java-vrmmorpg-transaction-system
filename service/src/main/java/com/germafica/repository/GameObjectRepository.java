@@ -1,7 +1,7 @@
 package com.germafica.repository;
 
-import com.germafica.entity.GameObject;
+import com.germafica.entity.Item;
 import org.springframework.data.repository.CrudRepository;
 
-public interface GameObjectRepository extends CrudRepository<GameObject, Integer> {
+public interface GameObjectRepository extends CrudRepository<Item, Integer> {
 }

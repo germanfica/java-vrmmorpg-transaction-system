@@ -1,7 +1,7 @@
 package com.germafica.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.germafica.entity.GameObject;
+import com.germafica.entity.Item;
 import lombok.Value;
 
 import java.util.List;
@@ -15,5 +15,5 @@ public class InventoryOnly {
     private int slotsNumber;
 
     @JsonProperty("game_objects")
-    private List<GameObject> gameObjects;
+    private List<Item> gameObjects;
 }

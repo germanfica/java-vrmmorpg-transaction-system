@@ -47,5 +47,5 @@ public class Inventory {
 //            joinColumns={@JoinColumn(name="gameObjectId")},
 //            inverseJoinColumns={@JoinColumn(name="inventoryId")})
     @JoinTable(name="stores")
-    private List<GameObject> gameObjects = new ArrayList<>();
+    private List<Item> gameObjects = new ArrayList<>();
 }

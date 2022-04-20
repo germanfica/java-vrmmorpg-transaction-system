@@ -3,7 +3,7 @@ package com.germafica.service;
 import com.germafica.dto.DeleteResponseMessage;
 import com.germafica.dto.GameObjectDto;
 import com.germafica.dto.GameObjectOnly;
-import com.germafica.entity.GameObject;
+import com.germafica.entity.Item;
 import com.germafica.repository.GameObjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +25,7 @@ public class GameObjectService {
     // == methods ==
     public GameObjectDto addGameObject(GameObjectOnly gameObjectOnly) {
         // Create objects
-        GameObject bookmark = new GameObject(
+        Item bookmark = new Item(
                 gameObjectOnly.getName(),
                 gameObjectOnly.getLevel(),
                 gameObjectOnly.getDescription(),
@@ -45,7 +45,7 @@ public class GameObjectService {
     }
 
     public DeleteResponseMessage deleteGameObject(int id) {
-        GameObject gameObject = new GameObject();
+        Item gameObject = new Item();
         gameObject.setId(id);
         gameObjectRepository.delete(gameObject); // Delete a block from the DB
 
@@ -53,7 +53,7 @@ public class GameObjectService {
     }
 
     // == utils ==
-    private Set<GameObjectDto> convertToDto(Iterable<GameObject> gameObjects) {
+    private Set<GameObjectDto> convertToDto(Iterable<Item> gameObjects) {
         Set<GameObjectDto> gameObjectsDto = new HashSet<>();
 
         gameObjects.forEach(gameObject -> gameObjectsDto.add(convertToDto(gameObject)));
@@ -61,7 +61,7 @@ public class GameObjectService {
         return gameObjectsDto;
     }
 
-    private GameObjectDto convertToDto(GameObject gameObject) {
+    private GameObjectDto convertToDto(Item gameObject) {
         return new GameObjectDto(
                 gameObject.getId(),
                 gameObject.getName(),

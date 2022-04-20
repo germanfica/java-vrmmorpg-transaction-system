@@ -8,9 +8,9 @@ import javax.persistence.*;
 @Setter
 @RequiredArgsConstructor
 @NoArgsConstructor // JPA requires that this constructor be defined as public or protected
-@Entity(name = "GameObject")
-@Table(name = "game_object")
-public class GameObject {
+@Entity(name = "Item")
+@Table(name = "item")
+public class Item {
     // == fields ==
     @Column(nullable = false)
     @Id
