@@ -17,9 +17,9 @@ import java.util.Set;
 @Setter
 @RequiredArgsConstructor
 //@NoArgsConstructor // JPA requires that this constructor be defined as public or protected
-@Entity(name = "Inventory")
-@Table(name = "inventory")
-public class Inventory {
+@Entity(name = "ItemStorage")
+@Table(name = "item_storage")
+public class ItemStorage {
     // == fields ==
     @Column(nullable = false)
     @Id
