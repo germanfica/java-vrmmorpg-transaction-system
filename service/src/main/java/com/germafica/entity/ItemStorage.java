@@ -38,7 +38,7 @@ public class ItemStorage {
     @Getter(value = AccessLevel.NONE)
     @OneToMany(mappedBy = "inventory", cascade = CascadeType.ALL)
     @LazyCollection( LazyCollectionOption.EXTRA )
-    private Set<User> users = new HashSet<>();
+    private Set<Account> users = new HashSet<>();
 
     // == stores relationship ==
     @Getter(value = AccessLevel.NONE)

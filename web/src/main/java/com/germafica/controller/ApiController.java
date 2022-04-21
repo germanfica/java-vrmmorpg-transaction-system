@@ -4,7 +4,7 @@ import com.germafica.dto.GameObjectDto;
 import com.germafica.dto.GameObjectOnly;
 import com.germafica.service.GameObjectService;
 import com.germafica.service.InventoryService;
-import com.germafica.service.UserService;
+import com.germafica.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,14 +18,14 @@ public class ApiController {
     // == fields ==
     private GameObjectService gameObjectService;
     private InventoryService inventoryService;
-    private UserService userService;
+    private AccountService userService;
 
     // == constructors ==
     @Autowired
     public ApiController(
             GameObjectService gameObjectService,
             InventoryService inventoryService,
-            UserService userService
+            AccountService userService
     ) {
         this.gameObjectService = gameObjectService;
         this.inventoryService = inventoryService;
