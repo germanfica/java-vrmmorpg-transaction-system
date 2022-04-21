@@ -36,9 +36,9 @@ public class ItemStorage {
 
     // == owns relationship ==
     @Getter(value = AccessLevel.NONE)
-    @OneToMany(mappedBy = "inventory", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "itemStorage", cascade = CascadeType.ALL)
     @LazyCollection( LazyCollectionOption.EXTRA )
-    private Set<Account> users = new HashSet<>();
+    private Set<Account> accounts = new HashSet<>();
 
     // == stores relationship ==
     @Getter(value = AccessLevel.NONE)
@@ -47,5 +47,5 @@ public class ItemStorage {
 //            joinColumns={@JoinColumn(name="gameObjectId")},
 //            inverseJoinColumns={@JoinColumn(name="inventoryId")})
     @JoinTable(name="stores")
-    private List<Item> gameObjects = new ArrayList<>();
+    private List<Item> items = new ArrayList<>();
 }

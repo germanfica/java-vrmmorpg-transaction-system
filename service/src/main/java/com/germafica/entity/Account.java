@@ -55,5 +55,5 @@ public class Account {
     // == owns relationship ==
     @Getter(value = AccessLevel.NONE)
     @ManyToOne(fetch = FetchType.LAZY)
-    private ItemStorage inventory;
+    private ItemStorage itemStorage;
 }
