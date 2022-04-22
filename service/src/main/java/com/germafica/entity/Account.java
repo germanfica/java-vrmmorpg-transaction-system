@@ -1,9 +1,13 @@
 package com.germafica.entity;
 
 import lombok.*;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * This class represents a user.
@@ -52,8 +56,9 @@ public class Account {
 
     // == associations ==
 
-    // == owns relationship ==
+    // == belongs relationship ==
     @Getter(value = AccessLevel.NONE)
-    @ManyToOne(fetch = FetchType.LAZY)
-    private ItemStorage itemStorage;
+    @OneToMany(mappedBy = "itemStorage", cascade = CascadeType.ALL)
+    @LazyCollection( LazyCollectionOption.EXTRA )
+    private Set<Character> character = new HashSet<>();
 }

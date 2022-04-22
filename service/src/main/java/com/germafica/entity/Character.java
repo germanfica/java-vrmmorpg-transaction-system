@@ -44,5 +44,13 @@ public class Character {
 
     // == associations ==
 
+    // == belongs relationship ==
+    @Getter(value = AccessLevel.NONE)
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Account account;
+
     // == owns relationship ==
+    @Getter(value = AccessLevel.NONE)
+    @ManyToOne(fetch = FetchType.LAZY)
+    private ItemStorage itemStorage;
 }
