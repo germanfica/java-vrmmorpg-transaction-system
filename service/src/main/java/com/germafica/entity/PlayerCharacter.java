@@ -6,7 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 /**
- * This class represents a character.
+ * This class represents a player character.
  * Please keep your @Entity class separated from it's
  * JSON representation. Using Jackson annotations here
  * it's a bad practice.
@@ -16,9 +16,9 @@ import javax.validation.constraints.Size;
 @Setter
 @RequiredArgsConstructor
 @NoArgsConstructor // JPA requires that this constructor be defined as public or protected
-@Entity(name = "Character")
+@Entity(name = "PlayerCharacter")
 @Table(name = "player_character")
-public class Character {
+public class PlayerCharacter {
     // == fields ==
     @Column(nullable = false)
     @Id

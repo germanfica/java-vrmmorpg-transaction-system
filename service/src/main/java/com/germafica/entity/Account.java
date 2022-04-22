@@ -60,5 +60,5 @@ public class Account {
     @Getter(value = AccessLevel.NONE)
     @OneToMany(mappedBy = "itemStorage", cascade = CascadeType.ALL)
     @LazyCollection( LazyCollectionOption.EXTRA )
-    private Set<Character> character = new HashSet<>();
+    private Set<PlayerCharacter> playerCharacters = new HashSet<>();
 }
