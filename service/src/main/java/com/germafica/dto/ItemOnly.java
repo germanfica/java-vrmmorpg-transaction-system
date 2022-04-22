@@ -3,7 +3,7 @@ package com.germafica.dto;
 import lombok.Value;
 
 @Value
-public class GameObjectOnly {
+public class ItemOnly {
     private String name, description;
     private int level;
     private Boolean tradable;

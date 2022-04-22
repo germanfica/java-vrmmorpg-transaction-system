@@ -1,7 +1,7 @@
 package com.germafica.controller;
 
-import com.germafica.dto.GameObjectDto;
-import com.germafica.dto.GameObjectOnly;
+import com.germafica.dto.ItemDto;
+import com.germafica.dto.ItemOnly;
 import com.germafica.service.GameObjectService;
 import com.germafica.service.InventoryService;
 import com.germafica.service.AccountService;
@@ -40,7 +40,7 @@ public class ApiController {
     @ResponseBody
     @CrossOrigin
     @PostMapping(path="/game_objects") // Map ONLY POST Requests
-    public ResponseEntity<GameObjectDto> addGameObject (@RequestBody GameObjectOnly gameObjectOnly){
+    public ResponseEntity<ItemDto> addGameObject (@RequestBody ItemOnly gameObjectOnly){
         return ResponseEntity.ok(gameObjectService.addGameObject(gameObjectOnly));
     }
 

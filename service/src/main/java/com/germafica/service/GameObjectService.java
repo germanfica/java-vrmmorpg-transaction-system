@@ -1,8 +1,8 @@
 package com.germafica.service;
 
 import com.germafica.dto.DeleteResponseMessage;
-import com.germafica.dto.GameObjectDto;
-import com.germafica.dto.GameObjectOnly;
+import com.germafica.dto.ItemDto;
+import com.germafica.dto.ItemOnly;
 import com.germafica.entity.Item;
 import com.germafica.repository.GameObjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class GameObjectService {
     }
 
     // == methods ==
-    public GameObjectDto addGameObject(GameObjectOnly gameObjectOnly) {
+    public ItemDto addGameObject(ItemOnly gameObjectOnly) {
         // Create objects
         Item bookmark = new Item(
                 gameObjectOnly.getName(),
@@ -35,12 +35,12 @@ public class GameObjectService {
         return convertToDto(gameObjectRepository.save(bookmark));
     }
 
-    public Iterable<GameObjectDto> getAllGameObjects(int materialId) {
+    public Iterable<ItemDto> getAllGameObjects(int materialId) {
         // This returns a JSON or XML
         return convertToDto(gameObjectRepository.findAll());
     }
 
-    public GameObjectDto getGameObject(int id) {
+    public ItemDto getGameObject(int id) {
         return convertToDto(gameObjectRepository.findById(id).get());
     }
 
@@ -53,16 +53,16 @@ public class GameObjectService {
     }
 
     // == utils ==
-    private Set<GameObjectDto> convertToDto(Iterable<Item> gameObjects) {
-        Set<GameObjectDto> gameObjectsDto = new HashSet<>();
+    private Set<ItemDto> convertToDto(Iterable<Item> gameObjects) {
+        Set<ItemDto> gameObjectsDto = new HashSet<>();
 
         gameObjects.forEach(gameObject -> gameObjectsDto.add(convertToDto(gameObject)));
 
         return gameObjectsDto;
     }
 
-    private GameObjectDto convertToDto(Item gameObject) {
-        return new GameObjectDto(
+    private ItemDto convertToDto(Item gameObject) {
+        return new ItemDto(
                 gameObject.getId(),
                 gameObject.getName(),
                 gameObject.getLevel(),

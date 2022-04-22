@@ -6,7 +6,7 @@ import lombok.NonNull;
 import lombok.Value;
 
 @Value
-public class GameObjectDto {
+public class ItemDto {
     @JsonProperty("id")
     @NonNull
     private int id;
