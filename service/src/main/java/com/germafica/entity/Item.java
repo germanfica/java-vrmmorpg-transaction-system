@@ -4,6 +4,13 @@ import lombok.*;
 
 import javax.persistence.*;
 
+/**
+ * This class represents an item.
+ * Please keep your @Entity class separated from it's
+ * JSON representation. Using Jackson annotations here
+ * it's a bad practice.
+ */
+// @ToString // don't use it
 @Getter
 @Setter
 @RequiredArgsConstructor
