@@ -17,7 +17,7 @@ import javax.validation.constraints.Size;
 @RequiredArgsConstructor
 @NoArgsConstructor // JPA requires that this constructor be defined as public or protected
 @Entity(name = "Character")
-@Table(name = "character")
+@Table(name = "player_character")
 public class Character {
     // == fields ==
     @Column(nullable = false)
