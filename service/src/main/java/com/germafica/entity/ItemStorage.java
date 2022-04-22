@@ -13,6 +13,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * This class represents an item storage.
+ * Please keep your @Entity class separated from it's
+ * JSON representation. Using Jackson annotations here
+ * it's a bad practice.
+ */
+// @ToString // don't use it
 @Getter
 @Setter
 @RequiredArgsConstructor
