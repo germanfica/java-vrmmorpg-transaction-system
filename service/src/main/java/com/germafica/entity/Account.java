@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * This class represents a user.
+ * This class represents a user account.
  * Please keep your @Entity class separated from it's
  * JSON representation. Using Jackson annotations here
  * it's a bad practice.
