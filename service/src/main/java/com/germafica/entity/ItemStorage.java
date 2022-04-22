@@ -48,11 +48,4 @@ public class ItemStorage {
     private Set<PlayerCharacter> playerCharacters = new HashSet<>();
 
     // == stores relationship ==
-    @Getter(value = AccessLevel.NONE)
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-//    @JoinTable(name="stores",
-//            joinColumns={@JoinColumn(name="gameObjectId")},
-//            inverseJoinColumns={@JoinColumn(name="inventoryId")})
-    @JoinTable(name="stores")
-    private List<Item> items = new ArrayList<>();
 }
