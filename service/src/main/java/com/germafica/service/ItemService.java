@@ -14,60 +14,60 @@ import java.util.Set;
 @Service
 public class ItemService {
     // == fields ==
-    private ItemRepository gameObjectRepository;
+    private ItemRepository itemRepository;
 
     // == constructors ==
     @Autowired
-    private ItemService(ItemRepository gameObjectRepository) {
-        this.gameObjectRepository = gameObjectRepository;
+    private ItemService(ItemRepository itemRepository) {
+        this.itemRepository = itemRepository;
     }
 
     // == methods ==
-    public ItemDto addGameObject(ItemOnly gameObjectOnly) {
+    public ItemDto addItem(ItemOnly itemOnly) {
         // Create objects
         Item bookmark = new Item(
-                gameObjectOnly.getName(),
-                gameObjectOnly.getLevel(),
-                gameObjectOnly.getDescription(),
-                gameObjectOnly.getTradable()
+                itemOnly.getName(),
+                itemOnly.getLevel(),
+                itemOnly.getDescription(),
+                itemOnly.getTradable()
         );
 
-        return convertToDto(gameObjectRepository.save(bookmark));
+        return convertToDto(itemRepository.save(bookmark));
     }
 
-    public Iterable<ItemDto> getAllGameObjects(int materialId) {
+    public Iterable<ItemDto> getAllItems(int materialId) {
         // This returns a JSON or XML
-        return convertToDto(gameObjectRepository.findAll());
+        return convertToDto(itemRepository.findAll());
     }
 
-    public ItemDto getGameObject(int id) {
-        return convertToDto(gameObjectRepository.findById(id).get());
+    public ItemDto getItem(int id) {
+        return convertToDto(itemRepository.findById(id).get());
     }
 
-    public DeleteResponseMessage deleteGameObject(int id) {
-        Item gameObject = new Item();
-        gameObject.setId(id);
-        gameObjectRepository.delete(gameObject); // Delete a block from the DB
+    public DeleteResponseMessage deleteItem(int id) {
+        Item item = new Item();
+        item.setId(id);
+        itemRepository.delete(item); // Delete a block from the DB
 
-        return new DeleteResponseMessage(""+id, "gameObject",true);
+        return new DeleteResponseMessage(""+id, "item",true);
     }
 
     // == utils ==
-    private Set<ItemDto> convertToDto(Iterable<Item> gameObjects) {
-        Set<ItemDto> gameObjectsDto = new HashSet<>();
+    private Set<ItemDto> convertToDto(Iterable<Item> items) {
+        Set<ItemDto> itemDto = new HashSet<>();
 
-        gameObjects.forEach(gameObject -> gameObjectsDto.add(convertToDto(gameObject)));
+        items.forEach(item -> itemDto.add(convertToDto(item)));
 
-        return gameObjectsDto;
+        return itemDto;
     }
 
-    private ItemDto convertToDto(Item gameObject) {
+    private ItemDto convertToDto(Item item) {
         return new ItemDto(
-                gameObject.getId(),
-                gameObject.getName(),
-                gameObject.getLevel(),
-                gameObject.getDescription(),
-                gameObject.getTradable()
+                item.getId(),
+                item.getName(),
+                item.getLevel(),
+                item.getDescription(),
+                item.getTradable()
         );
     }
 }

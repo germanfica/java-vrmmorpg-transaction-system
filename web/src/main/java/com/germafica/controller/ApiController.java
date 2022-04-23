@@ -39,9 +39,9 @@ public class ApiController {
     // == setters ==
     @ResponseBody
     @CrossOrigin
-    @PostMapping(path="/game_objects") // Map ONLY POST Requests
-    public ResponseEntity<ItemDto> addGameObject (@RequestBody ItemOnly gameObjectOnly){
-        return ResponseEntity.ok(itemService.addGameObject(gameObjectOnly));
+    @PostMapping(path="/items") // Map ONLY POST Requests
+    public ResponseEntity<ItemDto> addGameObject (@RequestBody ItemOnly itemOnly){
+        return ResponseEntity.ok(itemService.addItem(itemOnly));
     }
 
     //TODO: Add inventory set method
