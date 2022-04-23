@@ -16,16 +16,16 @@ import javax.annotation.PostConstruct;
 public class ApiController {
     // == fields ==
     private AccountService accountService;
-    private ItemService gameObjectService;
+    private ItemService itemService;
 
     // == constructors ==
     @Autowired
     public ApiController(
             AccountService accountService,
-            ItemService gameObjectService
+            ItemService itemService
     ) {
         this.accountService = accountService;
-        this.gameObjectService = gameObjectService;
+        this.itemService = itemService;
     }
 
     // == methods ==
@@ -37,7 +37,7 @@ public class ApiController {
     @CrossOrigin
     @PostMapping(path="/game_objects") // Map ONLY POST Requests
     public ResponseEntity<ItemDto> addGameObject (@RequestBody ItemOnly gameObjectOnly){
-        return ResponseEntity.ok(gameObjectService.addGameObject(gameObjectOnly));
+        return ResponseEntity.ok(itemService.addGameObject(gameObjectOnly));
     }
 
     //TODO: Add inventory set method
