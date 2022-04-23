@@ -2,6 +2,7 @@ package com.germafica.controller;
 
 import com.germafica.dto.ItemDto;
 import com.germafica.dto.ItemOnly;
+import com.germafica.entity.PlayerCharacter;
 import com.germafica.service.ItemService;
 import com.germafica.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,15 +18,18 @@ public class ApiController {
     // == fields ==
     private AccountService accountService;
     private ItemService itemService;
+    private PlayerCharacter playerCharacter;
 
     // == constructors ==
     @Autowired
     public ApiController(
             AccountService accountService,
-            ItemService itemService
+            ItemService itemService,
+            PlayerCharacter playerCharacter
     ) {
         this.accountService = accountService;
         this.itemService = itemService;
+        this.playerCharacter = playerCharacter;
     }
 
     // == methods ==
