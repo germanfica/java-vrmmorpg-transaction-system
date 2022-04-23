@@ -3,7 +3,6 @@ package com.germafica.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 
 /**
  * This class represents an item.
@@ -42,5 +41,8 @@ public class Item {
 
     // == associations ==
 
-    // == stores relationship ==
+    // == owns relationship ==
+    @Getter(value = AccessLevel.NONE)
+    @ManyToOne(fetch = FetchType.LAZY)
+    private PlayerCharacter playerCharacter;
 }
