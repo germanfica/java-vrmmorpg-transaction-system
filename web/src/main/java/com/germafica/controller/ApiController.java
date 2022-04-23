@@ -3,7 +3,6 @@ package com.germafica.controller;
 import com.germafica.dto.ItemDto;
 import com.germafica.dto.ItemOnly;
 import com.germafica.service.GameObjectService;
-import com.germafica.service.InventoryService;
 import com.germafica.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,18 +16,15 @@ import javax.annotation.PostConstruct;
 public class ApiController {
     // == fields ==
     private GameObjectService gameObjectService;
-    private InventoryService inventoryService;
     private AccountService userService;
 
     // == constructors ==
     @Autowired
     public ApiController(
             GameObjectService gameObjectService,
-            InventoryService inventoryService,
             AccountService userService
     ) {
         this.gameObjectService = gameObjectService;
-        this.inventoryService = inventoryService;
         this.userService = userService;
     }
 
