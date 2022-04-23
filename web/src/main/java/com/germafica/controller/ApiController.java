@@ -44,30 +44,30 @@ public class ApiController {
         return ResponseEntity.ok(itemService.addItem(itemOnly));
     }
 
-    //TODO: Add inventory set method
+    //TODO: Add item storage set method
 
-    //TODO: Add player set method
+    //TODO: Add player character set method
 
     //TODO: Add stores set method
 
     // == puts ==
     //TODO: Add item put method
 
-    //TODO: Add inventory put method
+    //TODO: Add item storage put method
 
-    //TODO: Add player put method
+    //TODO: Add player character put method
 
     //TODO: Add stores put method
 
     // == getters ==
     //TODO: Add item getAll method
-    //TODO: Add gitem get method
+    //TODO: Add item get method
 
-    //TODO: Add inventory getAll method
-    //TODO: Add inventory get method
+    //TODO: Add item storage getAll method
+    //TODO: Add item storage get method
 
-    //TODO: Add player getAll method
-    //TODO: Add player get method
+    //TODO: Add player character getAll method
+    //TODO: Add player character get method
 
     //TODO: Add stores getAll method
     //TODO: Add stores get method
@@ -75,9 +75,9 @@ public class ApiController {
     // == deletes ==
     //TODO: Add item delete method
 
-    //TODO: Add inventory delete method
+    //TODO: Add item storage delete method
 
-    //TODO: Add player delete method
+    //TODO: Add player character delete method
 
     //TODO: Add stores delete method
 }
