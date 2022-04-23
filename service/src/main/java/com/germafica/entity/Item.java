@@ -45,4 +45,14 @@ public class Item {
     @Getter(value = AccessLevel.NONE)
     @ManyToOne(fetch = FetchType.LAZY)
     private PlayerCharacter playerCharacter;
+
+    // == type-specific ==
+    public Item update(Item item) {
+        if(item.getName()!=null) this.setName(item.getName());
+        if(item.getLevel()!=-1) this.setLevel(item.getLevel());
+        if(item.getDescription()!=null) this.setDescription(item.getDescription());
+        if(item.getTradable()!=null) this.setTradable(item.getTradable());
+
+        return this;
+    }
 }

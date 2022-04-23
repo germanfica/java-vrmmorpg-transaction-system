@@ -1,5 +1,6 @@
 package com.germafica.controller;
 
+import com.germafica.dto.DeleteResponseMessage;
 import com.germafica.dto.ItemDto;
 import com.germafica.dto.ItemOnly;
 import com.germafica.entity.PlayerCharacter;
@@ -50,15 +51,30 @@ public class ApiController {
     //TODO: Add player character set method
 
     // == puts ==
-    //TODO: Add item put method
+    @CrossOrigin
+    @PutMapping(value = "/items/{id}")
+    public ResponseEntity<ItemDto> updateItem(@PathVariable("id") int id, @RequestBody ItemOnly itemOnly) {
+        return ResponseEntity.ok(itemService.updateItem(id, itemOnly));
+    }
 
     //TODO: Add item storage put method
 
     //TODO: Add player character put method
-    
+
     // == getters ==
-    //TODO: Add item getAll method
-    //TODO: Add item get method
+    @ResponseBody
+    @CrossOrigin
+    @GetMapping(path="/items")
+    public Iterable<ItemDto> getAllItems(@RequestParam(defaultValue = "-1", required = false) int item_id) {
+        return itemService.getAllItems(item_id);
+    }
+
+    @ResponseBody
+    @CrossOrigin
+    @GetMapping(value = "/items/{id}")
+    public ResponseEntity<ItemDto> getItem(@PathVariable("id") int id) {
+        return ResponseEntity.ok(itemService.getItem(id));
+    }
 
     //TODO: Add item storage getAll method
     //TODO: Add item storage get method
@@ -67,7 +83,12 @@ public class ApiController {
     //TODO: Add player character get method
 
     // == deletes ==
-    //TODO: Add item delete method
+    @ResponseBody
+    @CrossOrigin
+    @DeleteMapping(value = "/items/{id}")
+    public ResponseEntity<DeleteResponseMessage> deleteItem(@PathVariable("id") int id) {
+        return ResponseEntity.ok(itemService.deleteItem(id));
+    }
 
     //TODO: Add item storage delete method
 

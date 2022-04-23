@@ -35,6 +35,13 @@ public class ItemService {
         return convertToDto(itemRepository.save(bookmark));
     }
 
+    public ItemDto updateItem(int id, ItemOnly itemOnly) {
+        Item item = itemRepository.findById(id).get();
+        Item newItem = new Item(itemOnly.getName(), itemOnly.getLevel(), itemOnly.getDescription(), itemOnly.getTradable());
+
+        return convertToDto(itemRepository.save(item.update(newItem)));
+    }
+
     public Iterable<ItemDto> getAllItems(int materialId) {
         // This returns a JSON or XML
         return convertToDto(itemRepository.findAll());

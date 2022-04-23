@@ -34,15 +34,15 @@ public class PlayerCharacter {
     @NonNull
     private String name;
 
-    @Column(unique = true, nullable = false, updatable = true)
+    @Column(nullable = false, updatable = true)
     @NonNull
     private int level;
 
-    @Column(unique = true, nullable = false, updatable = true)
+    @Column(nullable = false, updatable = true)
     @NonNull
     private int health;
 
-    @Column(unique = true, nullable = false, updatable = true)
+    @Column(nullable = false, updatable = true)
     @NonNull
     private int experience;
 
