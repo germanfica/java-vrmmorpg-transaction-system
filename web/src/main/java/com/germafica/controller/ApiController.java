@@ -5,6 +5,7 @@ import com.germafica.dto.ItemOnly;
 import com.germafica.entity.PlayerCharacter;
 import com.germafica.service.ItemService;
 import com.germafica.service.AccountService;
+import com.germafica.service.PlayerCharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,18 +19,18 @@ public class ApiController {
     // == fields ==
     private AccountService accountService;
     private ItemService itemService;
-    private PlayerCharacter playerCharacter;
+    private PlayerCharacterService playerCharacterService;
 
     // == constructors ==
     @Autowired
     public ApiController(
             AccountService accountService,
             ItemService itemService,
-            PlayerCharacter playerCharacter
+            PlayerCharacterService playerCharacterService
     ) {
         this.accountService = accountService;
         this.itemService = itemService;
-        this.playerCharacter = playerCharacter;
+        this.playerCharacterService = playerCharacterService;
     }
 
     // == methods ==
