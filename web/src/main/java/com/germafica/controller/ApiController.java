@@ -40,7 +40,7 @@ public class ApiController {
     @ResponseBody
     @CrossOrigin
     @PostMapping(path="/items") // Map ONLY POST Requests
-    public ResponseEntity<ItemDto> addGameObject (@RequestBody ItemOnly itemOnly){
+    public ResponseEntity<ItemDto> addItem (@RequestBody ItemOnly itemOnly){
         return ResponseEntity.ok(itemService.addItem(itemOnly));
     }
 
@@ -51,7 +51,7 @@ public class ApiController {
     //TODO: Add stores set method
 
     // == puts ==
-    //TODO: Add game object put method
+    //TODO: Add item put method
 
     //TODO: Add inventory put method
 
@@ -60,8 +60,8 @@ public class ApiController {
     //TODO: Add stores put method
 
     // == getters ==
-    //TODO: Add game object getAll method
-    //TODO: Add game object get method
+    //TODO: Add item getAll method
+    //TODO: Add gitem get method
 
     //TODO: Add inventory getAll method
     //TODO: Add inventory get method
@@ -73,7 +73,7 @@ public class ApiController {
     //TODO: Add stores get method
 
     // == deletes ==
-    //TODO: Add game object delete method
+    //TODO: Add item delete method
 
     //TODO: Add inventory delete method
 
