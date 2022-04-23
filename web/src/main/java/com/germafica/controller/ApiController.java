@@ -15,17 +15,17 @@ import javax.annotation.PostConstruct;
 @CrossOrigin
 public class ApiController {
     // == fields ==
+    private AccountService accountService;
     private ItemService gameObjectService;
-    private AccountService userService;
 
     // == constructors ==
     @Autowired
     public ApiController(
-            ItemService gameObjectService,
-            AccountService userService
+            AccountService accountService,
+            ItemService gameObjectService
     ) {
+        this.accountService = accountService;
         this.gameObjectService = gameObjectService;
-        this.userService = userService;
     }
 
     // == methods ==
