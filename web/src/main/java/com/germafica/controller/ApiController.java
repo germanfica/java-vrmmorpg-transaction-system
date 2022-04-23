@@ -65,8 +65,8 @@ public class ApiController {
     @ResponseBody
     @CrossOrigin
     @GetMapping(path="/items")
-    public Iterable<ItemDto> getAllItems(@RequestParam(defaultValue = "-1", required = false) int item_id) {
-        return itemService.getAllItems(item_id);
+    public Iterable<ItemDto> getAllItems(@RequestParam(defaultValue = "-1", required = false) int player_character_id) {
+        return itemService.getAllItems(player_character_id);
     }
 
     @ResponseBody

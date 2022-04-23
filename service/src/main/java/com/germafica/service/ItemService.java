@@ -42,7 +42,7 @@ public class ItemService {
         return convertToDto(itemRepository.save(item.update(newItem)));
     }
 
-    public Iterable<ItemDto> getAllItems(int materialId) {
+    public Iterable<ItemDto> getAllItems(int playerCharacterId) {
         // This returns a JSON or XML
         return convertToDto(itemRepository.findAll());
     }
