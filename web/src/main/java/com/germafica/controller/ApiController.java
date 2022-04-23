@@ -3,7 +3,6 @@ package com.germafica.controller;
 import com.germafica.dto.DeleteResponseMessage;
 import com.germafica.dto.ItemDto;
 import com.germafica.dto.ItemOnly;
-import com.germafica.entity.PlayerCharacter;
 import com.germafica.service.ItemService;
 import com.germafica.service.AccountService;
 import com.germafica.service.PlayerCharacterService;
