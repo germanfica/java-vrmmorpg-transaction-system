@@ -58,7 +58,7 @@ public class Account {
 
     // == belongs relationship ==
     @Getter(value = AccessLevel.NONE)
-    @OneToMany(mappedBy = "itemStorage", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
     @LazyCollection( LazyCollectionOption.EXTRA )
     private Set<PlayerCharacter> playerCharacters = new HashSet<>();
 }
