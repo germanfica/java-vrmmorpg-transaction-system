@@ -4,7 +4,7 @@ import com.germafica.dto.DeleteResponseMessage;
 import com.germafica.dto.ItemDto;
 import com.germafica.dto.ItemOnly;
 import com.germafica.entity.Item;
-import com.germafica.repository.GameObjectRepository;
+import com.germafica.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +14,11 @@ import java.util.Set;
 @Service
 public class GameObjectService {
     // == fields ==
-    private GameObjectRepository gameObjectRepository;
+    private ItemRepository gameObjectRepository;
 
     // == constructors ==
     @Autowired
-    private GameObjectService(GameObjectRepository gameObjectRepository) {
+    private GameObjectService(ItemRepository gameObjectRepository) {
         this.gameObjectRepository = gameObjectRepository;
     }
 
