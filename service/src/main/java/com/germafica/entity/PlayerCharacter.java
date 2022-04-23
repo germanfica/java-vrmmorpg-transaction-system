@@ -50,7 +50,4 @@ public class PlayerCharacter {
     private Account account;
 
     // == owns relationship ==
-    @Getter(value = AccessLevel.NONE)
-    @ManyToOne(fetch = FetchType.LAZY)
-    private ItemStorage itemStorage;
 }
