@@ -48,17 +48,13 @@ public class ApiController {
 
     //TODO: Add player character set method
 
-    //TODO: Add stores set method
-
     // == puts ==
     //TODO: Add item put method
 
     //TODO: Add item storage put method
 
     //TODO: Add player character put method
-
-    //TODO: Add stores put method
-
+    
     // == getters ==
     //TODO: Add item getAll method
     //TODO: Add item get method
@@ -69,15 +65,10 @@ public class ApiController {
     //TODO: Add player character getAll method
     //TODO: Add player character get method
 
-    //TODO: Add stores getAll method
-    //TODO: Add stores get method
-
     // == deletes ==
     //TODO: Add item delete method
 
     //TODO: Add item storage delete method
 
     //TODO: Add player character delete method
-
-    //TODO: Add stores delete method
 }
