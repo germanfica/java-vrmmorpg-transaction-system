@@ -3,7 +3,7 @@ package com.germafica.service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CharacterService {
+public class PlayerCharacterService {
     // == fields ==
 
     // == constructors ==
