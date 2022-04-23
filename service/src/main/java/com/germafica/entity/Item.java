@@ -1,8 +1,11 @@
 package com.germafica.entity;
 
+import com.germafica.entity.relationship.ItemStorageItem;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class represents an item.
@@ -42,4 +45,10 @@ public class Item {
     // == associations ==
 
     // == stores relationship ==
+    @OneToMany(
+            mappedBy = "item",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<ItemStorageItem> owners = new ArrayList<>();
 }

@@ -1,5 +1,6 @@
 package com.germafica.entity;
 
+import com.germafica.entity.relationship.ItemStorageItem;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -48,4 +49,10 @@ public class ItemStorage {
     private Set<PlayerCharacter> playerCharacters = new HashSet<>();
 
     // == stores relationship ==
+    @OneToMany(
+            mappedBy = "itemStorage",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<ItemStorageItem> stores = new ArrayList<>();
 }
