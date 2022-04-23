@@ -12,13 +12,13 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Service
-public class GameObjectService {
+public class ItemService {
     // == fields ==
     private ItemRepository gameObjectRepository;
 
     // == constructors ==
     @Autowired
-    private GameObjectService(ItemRepository gameObjectRepository) {
+    private ItemService(ItemRepository gameObjectRepository) {
         this.gameObjectRepository = gameObjectRepository;
     }
 
