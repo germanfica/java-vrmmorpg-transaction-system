@@ -38,6 +38,9 @@ public class ApiController {
     void start() { }
 
     // == setters ==
+
+    //TODO: Add account set method
+
     @ResponseBody
     @CrossOrigin
     @PostMapping(path="/items") // Map ONLY POST Requests
@@ -45,22 +48,25 @@ public class ApiController {
         return ResponseEntity.ok(itemService.addItem(itemOnly));
     }
 
-    //TODO: Add item storage set method
-
     //TODO: Add player character set method
 
     // == puts ==
+
+    //TODO: Add account put method
+
     @CrossOrigin
     @PutMapping(value = "/items/{id}")
     public ResponseEntity<ItemDto> updateItem(@PathVariable("id") int id, @RequestBody ItemOnly itemOnly) {
         return ResponseEntity.ok(itemService.updateItem(id, itemOnly));
     }
 
-    //TODO: Add item storage put method
-
     //TODO: Add player character put method
 
     // == getters ==
+
+    //TODO: Add account getAll method
+    //TODO: Add account get method
+
     @ResponseBody
     @CrossOrigin
     @GetMapping(path="/items")
@@ -75,21 +81,19 @@ public class ApiController {
         return ResponseEntity.ok(itemService.getItem(id));
     }
 
-    //TODO: Add item storage getAll method
-    //TODO: Add item storage get method
-
     //TODO: Add player character getAll method
     //TODO: Add player character get method
 
     // == deletes ==
+
+    //TODO: Add account delete method
+
     @ResponseBody
     @CrossOrigin
     @DeleteMapping(value = "/items/{id}")
     public ResponseEntity<DeleteResponseMessage> deleteItem(@PathVariable("id") int id) {
         return ResponseEntity.ok(itemService.deleteItem(id));
     }
-
-    //TODO: Add item storage delete method
 
     //TODO: Add player character delete method
 }
