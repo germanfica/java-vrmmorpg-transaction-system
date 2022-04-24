@@ -8,7 +8,7 @@ import lombok.Value;
 public class AccountDto {
     @JsonProperty("id")
     @NonNull
-    private int id;
+    private String id;
 
     @JsonProperty("username")
     @NonNull private String username;

@@ -34,7 +34,7 @@ public class AccountService {
         return convertToDto(accountRepository.save(account));
     }
 
-    public AccountDto updateAccount(int id, AccountOnly accountOnly) {
+    public AccountDto updateAccount(String id, AccountOnly accountOnly) {
         Account account = accountRepository.findById(id).get();
         Account newAccount = new Account(
                 accountOnly.getUsername(),
@@ -49,11 +49,11 @@ public class AccountService {
         return convertToDto(accountRepository.findAll());
     }
 
-    public AccountDto getAccount(int id) {
+    public AccountDto getAccount(String id) {
         return convertToDto(accountRepository.findById(id).get());
     }
 
-    public DeleteResponseMessage deleteAccount(int id) {
+    public DeleteResponseMessage deleteAccount(String id) {
         Account account = new Account();
         account.setId(id);
         accountRepository.delete(account); // Delete an account from the DB

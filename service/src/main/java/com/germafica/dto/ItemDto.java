@@ -9,7 +9,7 @@ import lombok.Value;
 public class ItemDto {
     @JsonProperty("id")
     @NonNull
-    private int id;
+    private String id;
 
     @JsonProperty("name")
     @NonNull private String name;

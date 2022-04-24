@@ -33,7 +33,7 @@ public class PlayerCharacterService {
         return convertToDto(playerCharacterRepository.save(playerCharacter));
     }
 
-    public PlayerCharacterDto updatePlayerCharacter(int id, PlayerCharacterOnly playerCharacterOnly) {
+    public PlayerCharacterDto updatePlayerCharacter(String id, PlayerCharacterOnly playerCharacterOnly) {
         PlayerCharacter playerCharacter = playerCharacterRepository.findById(id).get();
         PlayerCharacter newPlayerCharacter = new PlayerCharacter(
                 playerCharacterOnly.getName(),
@@ -45,16 +45,16 @@ public class PlayerCharacterService {
         return convertToDto(playerCharacterRepository.save(playerCharacter.update(newPlayerCharacter)));
     }
 
-    public Iterable<PlayerCharacterDto> getAllPlayerCharacters(int accountId) {
+    public Iterable<PlayerCharacterDto> getAllPlayerCharacters(String accountId) {
         // This returns a JSON or XML
         return convertToDto(playerCharacterRepository.findAll());
     }
 
-    public PlayerCharacterDto getPlayerCharacter(int id) {
+    public PlayerCharacterDto getPlayerCharacter(String id) {
         return convertToDto(playerCharacterRepository.findById(id).get());
     }
 
-    public DeleteResponseMessage deletePlayerCharacter(int id) {
+    public DeleteResponseMessage deletePlayerCharacter(String id) {
         PlayerCharacter playerCharacter = new PlayerCharacter();
         playerCharacter.setId(id);
         playerCharacterRepository.delete(playerCharacter); // Delete a player character from the DB

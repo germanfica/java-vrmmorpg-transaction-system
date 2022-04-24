@@ -35,23 +35,23 @@ public class ItemService {
         return convertToDto(itemRepository.save(item));
     }
 
-    public ItemDto updateItem(int id, ItemOnly itemOnly) {
+    public ItemDto updateItem(String id, ItemOnly itemOnly) {
         Item item = itemRepository.findById(id).get();
         Item newItem = new Item(itemOnly.getName(), itemOnly.getLevel(), itemOnly.getDescription(), itemOnly.getTradable());
 
         return convertToDto(itemRepository.save(item.update(newItem)));
     }
 
-    public Iterable<ItemDto> getAllItems(int playerCharacterId) {
+    public Iterable<ItemDto> getAllItems(String playerCharacterId) {
         // This returns a JSON or XML
         return convertToDto(itemRepository.findAll());
     }
 
-    public ItemDto getItem(int id) {
+    public ItemDto getItem(String id) {
         return convertToDto(itemRepository.findById(id).get());
     }
 
-    public DeleteResponseMessage deleteItem(int id) {
+    public DeleteResponseMessage deleteItem(String id) {
         Item item = new Item();
         item.setId(id);
         itemRepository.delete(item); // Delete an item from the DB
