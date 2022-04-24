@@ -1,8 +1,6 @@
 package com.germafica.controller;
 
-import com.germafica.dto.DeleteResponseMessage;
-import com.germafica.dto.ItemDto;
-import com.germafica.dto.ItemOnly;
+import com.germafica.dto.*;
 import com.germafica.service.ItemService;
 import com.germafica.service.AccountService;
 import com.germafica.service.PlayerCharacterService;
@@ -39,7 +37,12 @@ public class ApiController {
 
     // == setters ==
 
-    //TODO: Add account set method
+    @ResponseBody
+    @CrossOrigin
+    @PostMapping(path="/accounts") // Map ONLY POST Requests
+    public ResponseEntity<AccountDto> addItem (@RequestBody AccountOnly accountOnly){
+        return ResponseEntity.ok(accountService.addAccount(accountOnly));
+    }
 
     @ResponseBody
     @CrossOrigin
@@ -52,7 +55,11 @@ public class ApiController {
 
     // == puts ==
 
-    //TODO: Add account put method
+    @CrossOrigin
+    @PutMapping(value = "/accounts/{id}")
+    public ResponseEntity<AccountDto> updateItem(@PathVariable("id") int id, @RequestBody AccountOnly accountOnly) {
+        return ResponseEntity.ok(accountService.updateAccount(id, accountOnly));
+    }
 
     @CrossOrigin
     @PutMapping(value = "/items/{id}")
@@ -64,8 +71,19 @@ public class ApiController {
 
     // == getters ==
 
-    //TODO: Add account getAll method
-    //TODO: Add account get method
+    @ResponseBody
+    @CrossOrigin
+    @GetMapping(path="/accounts")
+    public Iterable<AccountDto> getAllAccounts() {
+        return accountService.getAllAccounts();
+    }
+
+    @ResponseBody
+    @CrossOrigin
+    @GetMapping(value = "/accounts/{id}")
+    public ResponseEntity<AccountDto> getAccount(@PathVariable("id") int id) {
+        return ResponseEntity.ok(accountService.getAccount(id));
+    }
 
     @ResponseBody
     @CrossOrigin
@@ -86,7 +104,12 @@ public class ApiController {
 
     // == deletes ==
 
-    //TODO: Add account delete method
+    @ResponseBody
+    @CrossOrigin
+    @DeleteMapping(value = "/accounts/{id}")
+    public ResponseEntity<DeleteResponseMessage> deleteAccount(@PathVariable("id") int id) {
+        return ResponseEntity.ok(accountService.deleteAccount(id));
+    }
 
     @ResponseBody
     @CrossOrigin

@@ -61,4 +61,15 @@ public class Account {
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
     @LazyCollection( LazyCollectionOption.EXTRA )
     private Set<PlayerCharacter> playerCharacters = new HashSet<>();
+
+    // == type-specific ==
+    public Account update(Account account) {
+        if(account.getUsername()!=null) this.setUsername(account.getUsername());
+        if(account.getFirstName()!=null) this.setFirstName(account.getFirstName());
+        if(account.getLastName()!=null) this.setLastName(account.getLastName());
+        if(account.getEmail()!=null) this.setEmail(account.getEmail());
+        if(account.getPassword()!=null) this.setPassword(account.getPassword());
+
+        return this;
+    }
 }
