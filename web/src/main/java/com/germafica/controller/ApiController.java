@@ -40,7 +40,7 @@ public class ApiController {
     @ResponseBody
     @CrossOrigin
     @PostMapping(path="/accounts") // Map ONLY POST Requests
-    public ResponseEntity<AccountDto> addItem (@RequestBody AccountOnly accountOnly){
+    public ResponseEntity<AccountDto> addAccount (@RequestBody AccountOnly accountOnly){
         return ResponseEntity.ok(accountService.addAccount(accountOnly));
     }
 
@@ -62,7 +62,7 @@ public class ApiController {
 
     @CrossOrigin
     @PutMapping(value = "/accounts/{id}")
-    public ResponseEntity<AccountDto> updateItem(@PathVariable("id") int id, @RequestBody AccountOnly accountOnly) {
+    public ResponseEntity<AccountDto> updateAccount(@PathVariable("id") int id, @RequestBody AccountOnly accountOnly) {
         return ResponseEntity.ok(accountService.updateAccount(id, accountOnly));
     }
 
