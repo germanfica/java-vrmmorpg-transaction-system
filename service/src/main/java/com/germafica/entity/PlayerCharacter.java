@@ -58,4 +58,14 @@ public class PlayerCharacter {
     @OneToMany(mappedBy = "playerCharacter", cascade = CascadeType.ALL)
     @LazyCollection( LazyCollectionOption.EXTRA )
     private Set<Item> items = new HashSet<>();
+
+    // == type-specific ==
+    public PlayerCharacter update(PlayerCharacter playerCharacter) {
+        if(playerCharacter.getName()!=null) this.setName(playerCharacter.getName());
+        if(playerCharacter.getLevel()!=-1) this.setLevel(playerCharacter.getLevel());
+        if(playerCharacter.getHealth()!=-1) this.setHealth(playerCharacter.getHealth());
+        if(playerCharacter.getExperience()!=-1) this.setExperience(playerCharacter.getExperience());
+
+        return this;
+    }
 }
