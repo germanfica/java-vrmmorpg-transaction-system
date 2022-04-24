@@ -56,7 +56,7 @@ public class AccountService {
     public DeleteResponseMessage deleteAccount(int id) {
         Account account = new Account();
         account.setId(id);
-        accountRepository.delete(account); // Delete a block from the DB
+        accountRepository.delete(account); // Delete an account from the DB
 
         return new DeleteResponseMessage(""+id, "account",true);
     }

@@ -54,7 +54,7 @@ public class ItemService {
     public DeleteResponseMessage deleteItem(int id) {
         Item item = new Item();
         item.setId(id);
-        itemRepository.delete(item); // Delete a block from the DB
+        itemRepository.delete(item); // Delete an item from the DB
 
         return new DeleteResponseMessage(""+id, "item",true);
     }
