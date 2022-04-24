@@ -25,14 +25,14 @@ public class ItemService {
     // == methods ==
     public ItemDto addItem(ItemOnly itemOnly) {
         // Create objects
-        Item bookmark = new Item(
+        Item item = new Item(
                 itemOnly.getName(),
                 itemOnly.getLevel(),
                 itemOnly.getDescription(),
                 itemOnly.getTradable()
         );
 
-        return convertToDto(itemRepository.save(bookmark));
+        return convertToDto(itemRepository.save(item));
     }
 
     public ItemDto updateItem(int id, ItemOnly itemOnly) {
