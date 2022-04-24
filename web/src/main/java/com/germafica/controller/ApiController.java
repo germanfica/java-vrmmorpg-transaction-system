@@ -51,7 +51,12 @@ public class ApiController {
         return ResponseEntity.ok(itemService.addItem(itemOnly));
     }
 
-    //TODO: Add player character set method
+    @ResponseBody
+    @CrossOrigin
+    @PostMapping(path="/player_characters") // Map ONLY POST Requests
+    public ResponseEntity<PlayerCharacterDto> addPlayerCharacter (@RequestBody PlayerCharacterOnly playerCharacterOnly){
+        return ResponseEntity.ok(playerCharacterService.addPlayerCharacter(playerCharacterOnly));
+    }
 
     // == puts ==
 
@@ -67,7 +72,11 @@ public class ApiController {
         return ResponseEntity.ok(itemService.updateItem(id, itemOnly));
     }
 
-    //TODO: Add player character put method
+    @CrossOrigin
+    @PutMapping(value = "/player_characters/{id}")
+    public ResponseEntity<PlayerCharacterDto> updatePlayerCharacter(@PathVariable("id") int id, @RequestBody PlayerCharacterOnly playerCharacterOnly) {
+        return ResponseEntity.ok(playerCharacterService.updatePlayerCharacter(id, playerCharacterOnly));
+    }
 
     // == getters ==
 
@@ -99,8 +108,19 @@ public class ApiController {
         return ResponseEntity.ok(itemService.getItem(id));
     }
 
-    //TODO: Add player character getAll method
-    //TODO: Add player character get method
+    @ResponseBody
+    @CrossOrigin
+    @GetMapping(path="/player_characters")
+    public Iterable<PlayerCharacterDto> getAllPlayerCharacters(@RequestParam(defaultValue = "-1", required = false) int account_id) {
+        return playerCharacterService.getAllPlayerCharacters(account_id);
+    }
+
+    @ResponseBody
+    @CrossOrigin
+    @GetMapping(value = "/player_characters/{id}")
+    public ResponseEntity<PlayerCharacterDto> getPlayerCharacter(@PathVariable("id") int id) {
+        return ResponseEntity.ok(playerCharacterService.getPlayerCharacter(id));
+    }
 
     // == deletes ==
 
@@ -118,5 +138,10 @@ public class ApiController {
         return ResponseEntity.ok(itemService.deleteItem(id));
     }
 
-    //TODO: Add player character delete method
+    @ResponseBody
+    @CrossOrigin
+    @DeleteMapping(value = "/player_characters/{id}")
+    public ResponseEntity<DeleteResponseMessage> deletePlayerCharacter(@PathVariable("id") int id) {
+        return ResponseEntity.ok(playerCharacterService.deletePlayerCharacter(id));
+    }
 }
