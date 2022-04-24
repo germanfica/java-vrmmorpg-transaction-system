@@ -33,13 +33,8 @@ public class Item {
     @NonNull
     private int level;
 
-    @Column(nullable = false, columnDefinition = "VARCHAR(255)")
     @NonNull
-    private String description;
-
-    @Column(nullable = false, columnDefinition = "TINYINT")
-    @NonNull
-    private Boolean tradable;
+    private int durability;
 
     // == associations ==
 
@@ -52,8 +47,7 @@ public class Item {
     public Item update(Item item) {
         if(item.getName()!=null) this.setName(item.getName());
         if(item.getLevel()!=-1) this.setLevel(item.getLevel());
-        if(item.getDescription()!=null) this.setDescription(item.getDescription());
-        if(item.getTradable()!=null) this.setTradable(item.getTradable());
+        if(item.getDurability()!=-1) this.setDurability(item.getDurability());
 
         return this;
     }

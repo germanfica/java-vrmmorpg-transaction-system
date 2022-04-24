@@ -28,8 +28,7 @@ public class ItemService {
         Item item = new Item(
                 itemOnly.getName(),
                 itemOnly.getLevel(),
-                itemOnly.getDescription(),
-                itemOnly.getTradable()
+                itemOnly.getDurability()
         );
 
         return convertToDto(itemRepository.save(item));
@@ -37,7 +36,7 @@ public class ItemService {
 
     public ItemDto updateItem(String id, ItemOnly itemOnly) {
         Item item = itemRepository.findById(id).get();
-        Item newItem = new Item(itemOnly.getName(), itemOnly.getLevel(), itemOnly.getDescription(), itemOnly.getTradable());
+        Item newItem = new Item(itemOnly.getName(), itemOnly.getLevel(), itemOnly.getDurability());
 
         return convertToDto(itemRepository.save(item.update(newItem)));
     }
@@ -73,8 +72,7 @@ public class ItemService {
                 item.getId(),
                 item.getName(),
                 item.getLevel(),
-                item.getDescription(),
-                item.getTradable()
+                item.getDurability()
         );
     }
 }

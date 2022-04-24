@@ -17,10 +17,6 @@ public class ItemDto {
     @JsonProperty("level")
     @NonNull private int level;
 
-    @JsonProperty("description")
-    @NonNull private String description;
-
-    @JsonProperty("tradable")
-    @JsonInclude(JsonInclude.Include.NON_DEFAULT)
-    @NonNull private boolean tradable;
+    @JsonProperty("durability")
+    @NonNull private int durability;
 }

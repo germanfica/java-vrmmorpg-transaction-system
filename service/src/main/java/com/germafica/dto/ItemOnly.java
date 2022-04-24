@@ -4,7 +4,6 @@ import lombok.Value;
 
 @Value
 public class ItemOnly {
-    private String name, description;
-    private int level;
-    private Boolean tradable;
+    private String name;
+    private int level, durability;
 }
