@@ -41,8 +41,14 @@ public class ItemService {
     }
 
     public ItemDto updateItem(String id, ItemOnly itemOnly) {
+        // Create objects
         Item item = itemRepository.findById(id).get();
         Item newItem = new Item(itemOnly.getName(), itemOnly.getLevel(), itemOnly.getDurability());
+        PlayerCharacter playerCharacter = new PlayerCharacter();
+
+        // Set values
+        playerCharacter.setId(itemOnly.getPlayerCharacterId());
+        newItem.setPlayerCharacter(playerCharacter); // Update player character ownership
 
         return convertToDto(itemRepository.save(item.update(newItem)));
     }
