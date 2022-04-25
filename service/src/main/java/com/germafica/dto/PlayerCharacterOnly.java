@@ -5,6 +5,9 @@ import lombok.Value;
 
 @Value
 public class PlayerCharacterOnly {
+    @JsonProperty("account_id")
+    private String accountId;
+
     @JsonProperty("name")
     private String name;
 

@@ -1,6 +1,7 @@
 package com.germafica.service;
 
 import com.germafica.dto.*;
+import com.germafica.entity.Account;
 import com.germafica.entity.PlayerCharacter;
 import com.germafica.repository.PlayerCharacterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,13 @@ public class PlayerCharacterService {
                 playerCharacterOnly.getHealth(),
                 playerCharacterOnly.getExperience()
         );
+        Account account = new Account();
+
+        // Set values
+
+        account.setId(playerCharacterOnly.getAccountId());
+        playerCharacter.setAccount(account);
+        System.out.println("ACCOUNT_ID: " + account.getId());
 
         return convertToDto(playerCharacterRepository.save(playerCharacter));
     }
