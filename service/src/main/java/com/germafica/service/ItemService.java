@@ -4,6 +4,7 @@ import com.germafica.dto.DeleteResponseMessage;
 import com.germafica.dto.ItemDto;
 import com.germafica.dto.ItemOnly;
 import com.germafica.entity.Item;
+import com.germafica.entity.PlayerCharacter;
 import com.germafica.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,11 @@ public class ItemService {
                 itemOnly.getLevel(),
                 itemOnly.getDurability()
         );
+        PlayerCharacter playerCharacter = new PlayerCharacter();
+
+        // Set values
+        playerCharacter.setId(itemOnly.getPlayerCharacterId());
+        item.setPlayerCharacter(playerCharacter);
 
         return convertToDto(itemRepository.save(item));
     }
