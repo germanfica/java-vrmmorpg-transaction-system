@@ -54,8 +54,13 @@ public class PlayerCharacterService {
     }
 
     public Iterable<PlayerCharacterDto> getAllPlayerCharacters(String accountId) {
-        // This returns a JSON or XML
-        return convertToDto(playerCharacterRepository.findAll());
+        if(!accountId.equals("-1")) {
+            // This returns a JSON or XML with the attendances
+            return convertToDto(playerCharacterRepository.findAllByAccountId(accountId));
+        }else {
+            // This returns a JSON or XML
+            return convertToDto(playerCharacterRepository.findAll());
+        }
     }
 
     public PlayerCharacterDto getPlayerCharacter(String id) {
