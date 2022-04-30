@@ -5,6 +5,7 @@ import com.germafica.service.ItemService;
 import com.germafica.service.AccountService;
 import com.germafica.service.PlayerCharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -53,8 +54,13 @@ public class ApiController {
 
     @ResponseBody
     @CrossOrigin
-    @PostMapping(path="/player_characters") // Map ONLY POST Requests
-    public ResponseEntity<PlayerCharacterDto> addPlayerCharacter (@RequestBody PlayerCharacterOnly playerCharacterOnly){
+    @PostMapping(
+            path="/player_characters",
+            consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE}, // Keep in mind that the Content-Type header will be set to application/x-www-form-urlencoded in the UnityWebRequest.Post.
+            //produces = {MediaType.APPLICATION_ATOM_XML_VALUE, MediaType.APPLICATION_JSON_VALUE}
+            produces = {MediaType.APPLICATION_JSON_VALUE} // We will still be able to return a json without any problems.
+    ) // Map ONLY POST Requests
+    public ResponseEntity<PlayerCharacterDto> addPlayerCharacter (PlayerCharacterOnly playerCharacterOnly){ // We need to delete the @RequestBody
         return ResponseEntity.ok(playerCharacterService.addPlayerCharacter(playerCharacterOnly));
     }
 
