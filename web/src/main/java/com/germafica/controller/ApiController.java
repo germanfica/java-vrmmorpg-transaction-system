@@ -14,7 +14,7 @@ import javax.annotation.PostConstruct;
 @RestController // This means that this class is a Controller
 @RequestMapping(path = "/api") // This means URL's start with /api (after Application path)
 @CrossOrigin
-public class UnityController {
+public class ApiController {
     // == fields ==
     private AccountService accountService;
     private ItemService itemService;
@@ -22,7 +22,7 @@ public class UnityController {
 
     // == constructors ==
     @Autowired
-    public UnityController(
+    public ApiController(
             AccountService accountService,
             ItemService itemService,
             PlayerCharacterService playerCharacterService
