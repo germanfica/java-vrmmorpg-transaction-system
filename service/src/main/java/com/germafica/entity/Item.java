@@ -50,7 +50,7 @@ public class Item {
 
     // == type-specific ==
     public Item update(Item item) {
-        if(item.getPlayerCharacter()!=null) this.setPlayerCharacter(item.getPlayerCharacter());
+        if(item.getPlayerCharacter().getId()!=null) this.setPlayerCharacter(item.getPlayerCharacter());
         if(item.getName()!=null) this.setName(item.getName());
         if(item.getLevel()!=-1) this.setLevel(item.getLevel());
         if(item.getDurability()!=-1) this.setDurability(item.getDurability());
