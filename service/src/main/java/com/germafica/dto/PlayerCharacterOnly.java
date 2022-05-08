@@ -19,4 +19,13 @@ public class PlayerCharacterOnly {
 
     @JsonProperty("experience")
     private int experience;
+
+    @JsonProperty("x")
+    private float x;
+
+    @JsonProperty("y")
+    private float y;
+
+    @JsonProperty("z")
+    private float z;
 }

@@ -28,7 +28,10 @@ public class PlayerCharacterService {
                 playerCharacterOnly.getName(),
                 playerCharacterOnly.getLevel(),
                 playerCharacterOnly.getHealth(),
-                playerCharacterOnly.getExperience()
+                playerCharacterOnly.getExperience(),
+                playerCharacterOnly.getX(),
+                playerCharacterOnly.getY(),
+                playerCharacterOnly.getZ()
         );
         Account account = new Account();
 
@@ -47,7 +50,10 @@ public class PlayerCharacterService {
                 playerCharacterOnly.getName(),
                 playerCharacterOnly.getLevel(),
                 playerCharacterOnly.getHealth(),
-                playerCharacterOnly.getExperience()
+                playerCharacterOnly.getExperience(),
+                playerCharacterOnly.getX(),
+                playerCharacterOnly.getY(),
+                playerCharacterOnly.getZ()
         );
 
         return convertToDto(playerCharacterRepository.save(playerCharacter.update(newPlayerCharacter)));
@@ -90,7 +96,10 @@ public class PlayerCharacterService {
                 playerCharacter.getName(),
                 playerCharacter.getLevel(),
                 playerCharacter.getHealth(),
-                playerCharacter.getExperience()
+                playerCharacter.getExperience(),
+                playerCharacter.getX(),
+                playerCharacter.getY(),
+                playerCharacter.getZ()
         );
     }
 }

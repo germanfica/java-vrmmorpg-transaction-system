@@ -48,6 +48,18 @@ public class PlayerCharacter {
     @NonNull
     private int experience;
 
+    @Column(nullable = false, updatable = true)
+    @NonNull
+    private float x;
+
+    @Column(nullable = false, updatable = true)
+    @NonNull
+    private float y;
+
+    @Column(nullable = false, updatable = true)
+    @NonNull
+    private float z;
+
     // == associations ==
 
     // == belongs relationship ==
@@ -64,9 +76,12 @@ public class PlayerCharacter {
     // == type-specific ==
     public PlayerCharacter update(PlayerCharacter playerCharacter) {
         if(playerCharacter.getName()!=null) this.setName(playerCharacter.getName());
-        if(playerCharacter.getLevel()!=-1) this.setLevel(playerCharacter.getLevel());
-        if(playerCharacter.getHealth()!=-1) this.setHealth(playerCharacter.getHealth());
-        if(playerCharacter.getExperience()!=-1) this.setExperience(playerCharacter.getExperience());
+        if(playerCharacter.getLevel()!=-0) this.setLevel(playerCharacter.getLevel());
+        if(playerCharacter.getHealth()!=-0) this.setHealth(playerCharacter.getHealth());
+        if(playerCharacter.getExperience()!=0) this.setExperience(playerCharacter.getExperience());
+        if(playerCharacter.getX()!=0) this.setX(playerCharacter.getX());
+        if(playerCharacter.getY()!=0) this.setY(playerCharacter.getY());
+        if(playerCharacter.getZ()!=0) this.setZ(playerCharacter.getZ());
 
         return this;
     }

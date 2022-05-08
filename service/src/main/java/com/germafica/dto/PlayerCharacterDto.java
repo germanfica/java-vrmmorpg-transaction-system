@@ -21,4 +21,13 @@ public class PlayerCharacterDto {
 
     @JsonProperty("experience")
     @NonNull private int experience;
+
+    @JsonProperty("x")
+    private float x;
+
+    @JsonProperty("y")
+    private float y;
+
+    @JsonProperty("z")
+    private float z;
 }
