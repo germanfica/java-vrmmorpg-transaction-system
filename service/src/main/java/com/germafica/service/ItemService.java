@@ -54,8 +54,13 @@ public class ItemService {
     }
 
     public Iterable<ItemDto> getAllItems(String playerCharacterId) {
-        // This returns a JSON or XML
-        return convertToDto(itemRepository.findAll());
+        if(!playerCharacterId.equals("-1")) {
+            // This returns a JSON or XML
+            return convertToDto(itemRepository.findAllByPlayerCharacterId(playerCharacterId));
+        }else {
+            // This returns a JSON or XML
+            return convertToDto(itemRepository.findAll());
+        }
     }
 
     public ItemDto getItem(String id) {

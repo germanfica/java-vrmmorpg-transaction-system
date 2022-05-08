@@ -4,4 +4,5 @@ import com.germafica.entity.Item;
 import org.springframework.data.repository.CrudRepository;
 
 public interface ItemRepository extends CrudRepository<Item, String> {
+    Iterable<Item> findAllByPlayerCharacterId(String playerCharacterId);
 }
